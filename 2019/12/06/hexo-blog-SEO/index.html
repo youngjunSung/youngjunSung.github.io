@@ -16,7 +16,7 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/rss2.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"young jun Sung","sameAs":["https://github.com/youngjunSung","mailto:semantic@kakao.com","/#search","/#about"],"image":"cover.jpg"},"articleBody":"티스토리는 별도 설정 없이 검색엔진에 자동으로 노출이 되었던 걸로 기억하는데 (구글검색) 헥소 블로그는 플러그인을 통해서 SEO가 가능하다\n\n\n설치 플러그인 목록12345npm install --save hexo-auto-canonicalnpm install --save hexo-autonofollownpm install --save hexo-generator-feednpm install --save hexo-generator-seo-friendly-sitemapnpm install --save hexo-generator-robotstxt\n\n\n_config.yml 파일에 추가루트 폴더(테마폴더x)에 있는 _config.yml 파일에 다음과 같이 작성한다.\n123456789101112131415161718nofollow:    enable: true    exclude:    - exclude1.com    - exclude2.comfeed:  type: rss2  path: rss2.xml  limit: 20sitemap:  path: sitemap.xml  tag: false  category: falserobotstxt:  useragent: \"*\"  allow:    - /  sitemap: https://youngjunsung.github.io/sitemap.xml\n\nhtml head에 추가12345&lt;!-- ejs --&gt;&lt;%- autoCanonical(config, page) %&gt;&lt;!-- jade --&gt;| !&#123; autoCanonical(config, page) &#125;\n\n검색엔진에 등록하기구글색인 &gt; sitemaps 에서 rss2.xml과 sitemap.xml 파일을 제출한다.\n네이버사이트 인증 후 rss2.xml과 sitemap.xml 파일을 제출한다.\n다음사이트 정보만 입력해주면 된다.\n","dateCreated":"2019-12-06T17:59:20+09:00","dateModified":"2019-12-28T15:43:15+09:00","datePublished":"2019-12-06T17:59:20+09:00","description":"티스토리는 별도 설정 없이 검색엔진에 자동으로 노출이 되었던 걸로 기억하는데 (구글검색) 헥소 블로그는 플러그인을 통해서 SEO가 가능하다","headline":"hexo 블로그 검색엔진최적화(SEO) 방법","image":["img_hexo.png"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/"},"publisher":{"@type":"Organization","name":"young jun Sung","sameAs":["https://github.com/youngjunSung","mailto:semantic@kakao.com","/#search","/#about"],"image":"cover.jpg","logo":{"@type":"ImageObject","url":"cover.jpg"}},"url":"https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/","keywords":"헥소, blog, 검색엔진최적화, SEO","thumbnailUrl":"img_hexo.png"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"young jun Sung","sameAs":["https://github.com/youngjunSung","mailto:semantic@kakao.com","/#search","/#about"],"image":"cover.jpg"},"articleBody":"티스토리는 별도 설정 없이 검색엔진에 자동으로 노출이 되었던 걸로 기억하는데 (구글검색) 헥소 블로그는 플러그인을 통해서 SEO가 가능하다\n\n\n설치 플러그인 목록12345npm install --save hexo-auto-canonicalnpm install --save hexo-autonofollownpm install --save hexo-generator-feednpm install --save hexo-generator-seo-friendly-sitemapnpm install --save hexo-generator-robotstxt\n\n\n_config.yml 파일에 추가루트 폴더(테마폴더x)에 있는 _config.yml 파일에 다음과 같이 작성한다.\n123456789101112131415161718nofollow:    enable: true    exclude:    - exclude1.com    - exclude2.comfeed:  type: rss2  path: rss2.xml  limit: 20sitemap:  path: sitemap.xml  tag: false  category: falserobotstxt:  useragent: \"*\"  allow:    - /  sitemap: https://youngjunsung.github.io/sitemap.xml\n\nhtml head에 추가12345&lt;!-- ejs --&gt;&lt;%- autoCanonical(config, page) %&gt;&lt;!-- jade --&gt;| !&#123; autoCanonical(config, page) &#125;\n\n검색엔진에 등록하기구글색인 &gt; sitemaps 에서 rss2.xml과 sitemap.xml 파일을 제출한다.\n네이버사이트 인증 후 rss2.xml과 sitemap.xml 파일을 제출한다.\n다음사이트 정보만 입력해주면 된다.\n","dateCreated":"2019-12-06T17:59:20+09:00","dateModified":"2019-12-28T15:47:29+09:00","datePublished":"2019-12-06T17:59:20+09:00","description":"티스토리는 별도 설정 없이 검색엔진에 자동으로 노출이 되었던 걸로 기억하는데 (구글검색) 헥소 블로그는 플러그인을 통해서 SEO가 가능하다","headline":"hexo 블로그 검색엔진최적화(SEO) 방법","image":["img_hexo.jpg"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/"},"publisher":{"@type":"Organization","name":"young jun Sung","sameAs":["https://github.com/youngjunSung","mailto:semantic@kakao.com","/#search","/#about"],"image":"cover.jpg","logo":{"@type":"ImageObject","url":"cover.jpg"}},"url":"https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/","keywords":"헥소, blog, 검색엔진최적화, SEO","thumbnailUrl":"img_hexo.jpg"}</script>
     <meta name="description" content="티스토리는 별도 설정 없이 검색엔진에 자동으로 노출이 되었던 걸로 기억하는데 (구글검색) 헥소 블로그는 플러그인을 통해서 SEO가 가능하다">
 <meta name="keywords" content="헥소,blog,검색엔진최적화,SEO">
 <meta property="og:type" content="blog">
@@ -25,7 +25,7 @@
 <meta property="og:site_name" content="시멘틱로그">
 <meta property="og:description" content="티스토리는 별도 설정 없이 검색엔진에 자동으로 노출이 되었던 걸로 기억하는데 (구글검색) 헥소 블로그는 플러그인을 통해서 SEO가 가능하다">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-12-28T06:43:15.778Z">
+<meta property="og:updated_time" content="2019-12-28T06:47:29.022Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -35,8 +35,8 @@
         <meta property="og:image" content="https://youngjunsung.github.io/assets/images/cover.jpg">
     
     
-        <meta property="og:image" content="https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/img_hexo.png">
-        <meta class="swiftype" name="image" data-type="enum" content="https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/img_hexo.png">
+        <meta property="og:image" content="https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/img_hexo.jpg">
+        <meta class="swiftype" name="image" data-type="enum" content="https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/img_hexo.jpg">
     
     
     
