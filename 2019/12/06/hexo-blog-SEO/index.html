@@ -1,0 +1,542 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="시멘틱로그">
+    <title>hexo blog SEO - 시멘틱로그</title>
+    <meta name="author" content="young jun Sung">
+    <meta name="google-site-verification" content="7fFgnXi7Ib4qsKGlolEu3a5ODEwGBxi-UhDSBUNpqCY">
+    <meta name="naver-site-verification" content="192bec4288d967f392e212883af44f5761376fe2">
+    <link rel="canonical" href="https://youngjunsung.github.io/2019/12/06/hexo-blog-seo/">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/rss2.xml">
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"young jun Sung","sameAs":["https://github.com/youngjunSung","mailto:semantic@kakao.com","/#search","/#about"],"image":"cover.jpg"},"articleBody":"티스토리는 별도 설정 없이 검색엔진에 자동으로 노출이 되었던 걸로 기억하는데 (구글검색) 헥소 블로그는 플러그인을 통해서 SEO가 가능하다\n\n\n설치 플러그인 목록12345npm install --save hexo-auto-canonicalnpm install --save hexo-autonofollownpm install --save hexo-generator-feednpm install --save hexo-generator-seo-friendly-sitemapnpm install --save hexo-generator-robotstxt\n\n\n_config.yml 파일에 추가루트 폴더(테마폴더x)에 있는 _config.yml 파일에 다음과 같이 작성한다.\n123456789101112131415161718nofollow:    enable: true    exclude:    - exclude1.com    - exclude2.comfeed:  type: rss2  path: rss2.xml  limit: 20sitemap:  path: sitemap.xml  tag: false  category: falserobotstxt:  useragent: \"*\"  allow:    - /  sitemap: https://youngjunsung.github.io/sitemap.xml\n\nhtml head에 추가12345&lt;!-- ejs --&gt;&lt;%- autoCanonical(config, page) %&gt;&lt;!-- jade --&gt;| !&#123; autoCanonical(config, page) &#125;\n\n검색엔진에 등록하기구글색인 &gt; sitemaps 에서 rss2.xml과 sitemap.xml 파일을 제출한다.\n네이버사이트 인증 후 rss2.xml과 sitemap.xml 파일을 제출한다.\n다음사이트 정보만 입력해주면 된다.\n","dateCreated":"2019-12-06T17:59:20+09:00","dateModified":"2019-12-28T13:36:49+09:00","datePublished":"2019-12-06T17:59:20+09:00","description":"티스토리는 별도 설정 없이 검색엔진에 자동으로 노출이 되었던 걸로 기억하는데 (구글검색) 헥소 블로그는 플러그인을 통해서 SEO가 가능하다","headline":"hexo blog SEO","image":[null,"img_hexo.jpg"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/"},"publisher":{"@type":"Organization","name":"young jun Sung","sameAs":["https://github.com/youngjunSung","mailto:semantic@kakao.com","/#search","/#about"],"image":"cover.jpg","logo":{"@type":"ImageObject","url":"cover.jpg"}},"url":"https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/","keywords":"헥소, blog, 검색엔진최적화","thumbnailUrl":"img_hexo.jpg"}</script>
+    <meta name="description" content="티스토리는 별도 설정 없이 검색엔진에 자동으로 노출이 되었던 걸로 기억하는데 (구글검색) 헥소 블로그는 플러그인을 통해서 SEO가 가능하다">
+<meta name="keywords" content="헥소,blog,검색엔진최적화">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="hexo blog SEO">
+<meta property="og:url" content="https:&#x2F;&#x2F;youngjunsung.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;hexo-blog-SEO&#x2F;index.html">
+<meta property="og:site_name" content="시멘틱로그">
+<meta property="og:description" content="티스토리는 별도 설정 없이 검색엔진에 자동으로 노출이 되었던 걸로 기억하는데 (구글검색) 헥소 블로그는 플러그인을 통해서 SEO가 가능하다">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2019-12-28T04:36:49.176Z">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://youngjunsung.github.io/assets/images/cover.jpg">
+    
+    
+    
+        <meta property="og:image" content="https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/img_hexo.jpg">
+        <meta class="swiftype" name="image" data-type="enum" content="https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/img_hexo.jpg">
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-xwnazf7smmmjdh5bvwtawpqlxjikeyfiv2chx93diwamdhitf5b28gml65rv.min.css">
+    <!--STYLES END-->
+    
+
+    
+
+    
+        
+    
+    <script data-ad-client="ca-pub-8683283582458614" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/" aria-label>
+            시멘틱로그
+        </a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about" aria-label="링크 열기: /#about">
+        
+        
+            <img class="header-picture" src="/assets/images/cover.jpg" alt="저자 이미지">
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about" aria-label="저자에 대해 더 알아보기">
+                    <img class="sidebar-profile-picture" src="/assets/images/cover.jpg" alt="저자 이미지">
+                </a>
+                <h4 class="sidebar-profile-name">young jun Sung</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>:)</p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://youngjunsung.github.io/" title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="카테고리">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">카테고리</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="태그">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">태그</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="아카이브">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">아카이브</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/youngjunSung" target="_blank" rel="external nofollow noopener noreferrer" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/mailto:semantic@kakao.com" target="_blank" rel="noopener" title="Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link open-algolia-search" href="#search" title="검색">
+                    
+                        <i class="sidebar-button-icon fa fa-search" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">검색</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="#about" title="About">
+                    
+                        <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">About</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/atom.xml" title="RSS">
+                    
+                        <i class="sidebar-button-icon fa fa-rss" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+        <div class="post-header-cover
+                    text-left
+                    " style="background-image:url('/2019/12/06/hexo-blog-SEO/img_hexo.jpg');" data-behavior="4">
+            
+                <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            hexo blog SEO
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2019-12-06T17:59:20+09:00">
+	
+		    2019/12/06
+    	
+    </time>
+    
+</div>
+
+    
+</div>
+
+            
+        </div>
+
+            <div id="main" data-behavior="4" class="hasCover
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <p>티스토리는 별도 설정 없이 검색엔진에 자동으로 노출이 되었던 걸로 기억하는데 (구글검색) 헥소 블로그는 플러그인을 통해서 SEO가 가능하다</p>
+<a id="more"></a>
+
+<h2 id="설치-플러그인-목록"><a href="#설치-플러그인-목록" class="headerlink" title="설치 플러그인 목록"></a>설치 플러그인 목록</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-auto-canonical</span><br><span class="line">npm install --save hexo-autonofollow</span><br><span class="line">npm install --save hexo-generator-feed</span><br><span class="line">npm install --save hexo-generator-seo-friendly-sitemap</span><br><span class="line">npm install --save hexo-generator-robotstxt</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="config-yml-파일에-추가"><a href="#config-yml-파일에-추가" class="headerlink" title="_config.yml 파일에 추가"></a>_config.yml 파일에 추가</h3><p>루트 폴더(테마폴더x)에 있는 _config.yml 파일에 다음과 같이 작성한다.</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">nofollow:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">exclude:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">exclude1.com</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">exclude2.com</span></span><br><span class="line"><span class="attr">feed:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">rss2</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">rss2.xml</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">20</span></span><br><span class="line"><span class="attr">sitemap:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">sitemap.xml</span></span><br><span class="line">  <span class="attr">tag:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">category:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">robotstxt:</span></span><br><span class="line">  <span class="attr">useragent:</span> <span class="string">"*"</span></span><br><span class="line">  <span class="attr">allow:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">/</span></span><br><span class="line">  <span class="attr">sitemap:</span> <span class="string">https://youngjunsung.github.io/sitemap.xml</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="html-head에-추가"><a href="#html-head에-추가" class="headerlink" title="html head에 추가"></a>html head에 추가</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- ejs --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%-</span> <span class="attr">autoCanonical</span>(<span class="attr">config</span>, <span class="attr">page</span>) %&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- jade --&gt;</span></span><br><span class="line">| !&#123; autoCanonical(config, page) &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="검색엔진에-등록하기"><a href="#검색엔진에-등록하기" class="headerlink" title="검색엔진에 등록하기"></a>검색엔진에 등록하기</h3><h4 id="구글"><a href="#구글" class="headerlink" title="구글"></a>구글</h4><p>색인 &gt; sitemaps 에서 rss2.xml과 sitemap.xml 파일을 제출한다.</p>
+<h3 id="네이버"><a href="#네이버" class="headerlink" title="네이버"></a>네이버</h3><p>사이트 인증 후 rss2.xml과 sitemap.xml 파일을 제출한다.</p>
+<h3 id="다음"><a href="#다음" class="headerlink" title="다음"></a>다음</h3><p>사이트 정보만 입력해주면 된다.</p>
+
+            
+
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">태그</span><br>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/blog/" rel="tag">blog</a> <a class="tag tag--primary tag--small t-link" href="/tags/%EA%B2%80%EC%83%89%EC%97%94%EC%A7%84%EC%B5%9C%EC%A0%81%ED%99%94/" rel="tag">검색엔진최적화</a> <a class="tag tag--primary tag--small t-link" href="/tags/%ED%97%A5%EC%86%8C/" rel="tag">헥소</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled" aria-hidden="true">
+                        
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">이전</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/12/06/babel-for-es6/" data-tooltip="babel for es6" aria-label="다음: babel for es6">
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">다음</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="이 포스트 공유하기">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/" title="Facebook에 공유하기" aria-label="Facebook에 공유하기" rel="external nofollow noopener noreferrer">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/" title="Twitter에 공유하기" aria-label="Twitter에 공유하기" rel="external nofollow noopener noreferrer">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/" title="Google+에 공유하기" aria-label="Google+에 공유하기" rel="external nofollow noopener noreferrer">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+                <li class="post-action">
+                    <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="댓글을 남겨주세요">
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li>
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="맨 위로">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2019 young jun Sung. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled" aria-hidden="true">
+                        
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">이전</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/12/06/babel-for-es6/" data-tooltip="babel for es6" aria-label="다음: babel for es6">
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">다음</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="이 포스트 공유하기">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/" title="Facebook에 공유하기" aria-label="Facebook에 공유하기" rel="external nofollow noopener noreferrer">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/" title="Twitter에 공유하기" aria-label="Twitter에 공유하기" rel="external nofollow noopener noreferrer">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/" title="Google+에 공유하기" aria-label="Google+에 공유하기" rel="external nofollow noopener noreferrer">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+                <li class="post-action">
+                    <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="댓글을 남겨주세요">
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li>
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="맨 위로">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                
+    <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+        <i id="btn-close-shareoptions" class="fa fa-times"></i>
+        <ul class="share-options">
+            
+                
+                
+                <li class="share-option">
+                    <a class="share-option-btn" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/" aria-label="Facebook에 공유하기" rel="external nofollow noopener noreferrer">
+                        <i class="fab fa-facebook" aria-hidden="true"></i><span>Facebook에 공유하기</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a class="share-option-btn" target="_blank" href="https://twitter.com/intent/tweet?text=https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/" aria-label="Twitter에 공유하기" rel="external nofollow noopener noreferrer">
+                        <i class="fab fa-twitter" aria-hidden="true"></i><span>Twitter에 공유하기</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a class="share-option-btn" target="_blank" href="https://plus.google.com/share?url=https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/" aria-label="Google+에 공유하기" rel="external nofollow noopener noreferrer">
+                        <i class="fab fa-google-plus" aria-hidden="true"></i><span>Google+에 공유하기</span>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+
+            
+        </div>
+        
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/cover.jpg" alt="저자 이미지">
+        
+            <h4 id="about-card-name">young jun Sung</h4>
+        
+            <div id="about-card-bio"><p>:)</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>Taxi Driver</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker-alt"></i>
+                <br>
+                zalem
+            </div>
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-lcgef6nixnlyvnnovb447skinpg8youtpobbci1rhiw3kc3jgc4ipnhd3zhl.min.js"></script>
+<!--SCRIPTS END-->
+
+
+    
+        <script>
+          var disqus_config = function() {
+            this.page.url = 'https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/';
+              
+            this.page.identifier = '2019/12/06/hexo-blog-SEO/';
+              
+          };
+          (function() {
+            var d = document, s = d.createElement('script');
+            var disqus_shortname = 'semantic-log';
+            s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+        </script>
+    
+
+
+
+
+    </body>
+</html>

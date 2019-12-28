@@ -1,0 +1,568 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="시멘틱로그">
+    <title>babel for es6 - 시멘틱로그</title>
+    <meta name="author" content="young jun Sung">
+    <meta name="google-site-verification" content="7fFgnXi7Ib4qsKGlolEu3a5ODEwGBxi-UhDSBUNpqCY">
+    <meta name="naver-site-verification" content="192bec4288d967f392e212883af44f5761376fe2">
+    <link rel="canonical" href="https://youngjunsung.github.io/2019/12/06/babel-for-es6/">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/rss2.xml">
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"young jun Sung","sameAs":["https://github.com/youngjunSung","mailto:semantic@kakao.com","/#search","/#about"],"image":"cover.jpg"},"articleBody":"현재 es6가 많이 이용되고 있긴 하나 브라우저가 es6의 모든 기능을 지원하는 것은 아니다. 그래서 babel이라는 트랜트컴파일러를 이용해 es5로 변환해서 배포 해야한다. 이 글에서는 gulp를 활용한 babel 사용법을 정리해본다.\n\n\n기본 프로젝트 구조123456├─ .babelrc├─ gulpfile.js├─ package.json└─ src   └─ js      └─ lib.js\n\n설치목록12345npm install -g gulpnpm install --save-dev gulp gulp-babelnpm install --save-dev @babel/preset-envnpm install --save-dev @babel/corenpm install --save-dev gulp-sourcemaps\n\n\ngulpgulp 명령어로 gulpfile.js를 실행할 수 있다\ngulp-babelgulp를 이용해 babel을 사용할 수 있게 해주는 패키지다\n@babel/preset-env최신 javascript를 변환해 줄 수 있는 패키지다.\n@babel/coregulp-babel의 peer dependency라고 하는데 뭔 뜻인지 모르겠다. 일단 필요하니까 설치한다\ngulp-sourcemaps변환된 코드와 변환되기 전 코드를 매핑해주는 패키지\n그리고 프로젝트 폴더에 .babelrc 파일을 생성하고 다음과 같이 작성한다.\n123&#123;  \"presets\": [\"@babel/preset-env\"]&#125;\n\nes6코드 작성이제 es6코드를 src/js/lib.js 에 작성한다\n1234567891011121314151617let sum = (a, b) =&gt; a + b;console.log(sum(3, 4));const sentences = [  &#123; subject: \"JavaScript\", verb: \"is\", object: \"great\" &#125;,  &#123; subject: \"papago\", verb: \"are\", object: \"large\" &#125;];const say = (&#123; subject, verb, object &#125;) =&gt; &#123;  console.log(`$&#123;subject&#125;$&#123;verb&#125;$&#123;object&#125;`);&#125;;// sentence 배열 내에 있는 각 객체별로 subject, verb, object를 연결해 출력for (let s of sentences) &#123;  say(s);&#125;\n노드를 이용해 코드를 먼저 실행해본다\n1node src/js/lib.js\n\n출력내용\n1237JavaScriptisgreatpapagoarelarge\n\ngulpfile 코드 작성123456789101112131415var gulp = require('gulp');var babel = require('gulp-babel');var sourcemaps = require('gulp-sourcemaps');gulp.task('babel', function() &#123;  return gulp.src('src/**/*.js')    .pipe(sourcemaps.init())    .pipe(babel())    .pipe(sourcemaps.write('./', &#123;sourceRoot: '../src'&#125;))    .pipe(gulp.dest('dist'));&#125;);gulp.task('watch',function()&#123;  gulp.watch('src/**/*.js',gulp.series('babel'));&#125;);\n\n자세한 설명은 생략한다이제 gulp 명령어로 babel을 실행해본다\n1gulp babel\n\n컴파일되어 생성된 dist 폴더\n12345678910├─ .babelrc├─ gulpfile.js├─ package.json├─ dist   └─ js      ├─ lib.js      └─ lib.js.map└─ src   └─ js      └─ lib.js\n\ngulp watch 관련 이슈이전에 하던대로  watch 코드를 작성 후 돌려봤는데 오류가 떴다.\n12Error: watching app/css/*.css: watch task has to be a function ...어쩌구\n\n구글링 해보니 gulp 버전이 업되면서 사용법이 달라졌던 것이다.\ngulp 3.x 버전12345gulp.task('watch', function() &#123;  gulp.watch('app/css/*.css', ['styles']);  gulp.watch('app/js/*.js', ['scripts']);  gulp.watch('app/img/*', ['images']);&#125;);\n\ngulp 4.x 버전12345gulp.task('watch', function() &#123;  gulp.watch('app/css/*.css', gulp.series('styles'));  gulp.watch('app/js/*.js', gulp.series('scripts'));  gulp.watch('app/img/*', gulp.series('images'));&#125;);","dateCreated":"2019-12-06T16:30:27+09:00","dateModified":"2019-12-28T13:36:49+09:00","datePublished":"2019-12-06T16:30:27+09:00","description":"현재 es6가 많이 이용되고 있긴 하나 브라우저가 es6의 모든 기능을 지원하는 것은 아니다. 그래서 babel이라는 트랜트컴파일러를 이용해 es5로 변환해서 배포 해야한다. 이 글에서는 gulp를 활용한 babel 사용법을 정리해본다.","headline":"babel for es6","image":[null,"img_babel.jpg"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://youngjunsung.github.io/2019/12/06/babel-for-es6/"},"publisher":{"@type":"Organization","name":"young jun Sung","sameAs":["https://github.com/youngjunSung","mailto:semantic@kakao.com","/#search","/#about"],"image":"cover.jpg","logo":{"@type":"ImageObject","url":"cover.jpg"}},"url":"https://youngjunsung.github.io/2019/12/06/babel-for-es6/","keywords":"javascript, es6, babel","thumbnailUrl":"img_babel.jpg"}</script>
+    <meta name="description" content="현재 es6가 많이 이용되고 있긴 하나 브라우저가 es6의 모든 기능을 지원하는 것은 아니다. 그래서 babel이라는 트랜트컴파일러를 이용해 es5로 변환해서 배포 해야한다. 이 글에서는 gulp를 활용한 babel 사용법을 정리해본다.">
+<meta name="keywords" content="javascript,es6,babel">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="babel for es6">
+<meta property="og:url" content="https:&#x2F;&#x2F;youngjunsung.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;babel-for-es6&#x2F;index.html">
+<meta property="og:site_name" content="시멘틱로그">
+<meta property="og:description" content="현재 es6가 많이 이용되고 있긴 하나 브라우저가 es6의 모든 기능을 지원하는 것은 아니다. 그래서 babel이라는 트랜트컴파일러를 이용해 es5로 변환해서 배포 해야한다. 이 글에서는 gulp를 활용한 babel 사용법을 정리해본다.">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2019-12-28T04:36:49.174Z">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://youngjunsung.github.io/assets/images/cover.jpg">
+    
+    
+    
+        <meta property="og:image" content="https://youngjunsung.github.io/2019/12/06/babel-for-es6/img_babel.jpg">
+        <meta class="swiftype" name="image" data-type="enum" content="https://youngjunsung.github.io/2019/12/06/babel-for-es6/img_babel.jpg">
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-xwnazf7smmmjdh5bvwtawpqlxjikeyfiv2chx93diwamdhitf5b28gml65rv.min.css">
+    <!--STYLES END-->
+    
+
+    
+
+    
+        
+    
+    <script data-ad-client="ca-pub-8683283582458614" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/" aria-label>
+            시멘틱로그
+        </a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about" aria-label="링크 열기: /#about">
+        
+        
+            <img class="header-picture" src="/assets/images/cover.jpg" alt="저자 이미지">
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about" aria-label="저자에 대해 더 알아보기">
+                    <img class="sidebar-profile-picture" src="/assets/images/cover.jpg" alt="저자 이미지">
+                </a>
+                <h4 class="sidebar-profile-name">young jun Sung</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>:)</p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://youngjunsung.github.io/" title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="카테고리">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">카테고리</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="태그">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">태그</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="아카이브">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">아카이브</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/youngjunSung" target="_blank" rel="external nofollow noopener noreferrer" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/mailto:semantic@kakao.com" target="_blank" rel="noopener" title="Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link open-algolia-search" href="#search" title="검색">
+                    
+                        <i class="sidebar-button-icon fa fa-search" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">검색</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="#about" title="About">
+                    
+                        <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">About</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/atom.xml" title="RSS">
+                    
+                        <i class="sidebar-button-icon fa fa-rss" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+        <div class="post-header-cover
+                    text-left
+                    " style="background-image:url('/2019/12/06/babel-for-es6/img_babel.jpg');" data-behavior="4">
+            
+                <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            babel for es6
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2019-12-06T16:30:27+09:00">
+	
+		    2019/12/06
+    	
+    </time>
+    
+</div>
+
+    
+</div>
+
+            
+        </div>
+
+            <div id="main" data-behavior="4" class="hasCover
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <p>현재 es6가 많이 이용되고 있긴 하나 브라우저가 es6의 모든 기능을 지원하는 것은 아니다. 그래서 babel이라는 트랜트컴파일러를 이용해 es5로 변환해서 배포 해야한다. 이 글에서는 gulp를 활용한 babel 사용법을 정리해본다.</p>
+<a id="more"></a>
+
+<h2 id="기본-프로젝트-구조"><a href="#기본-프로젝트-구조" class="headerlink" title="기본 프로젝트 구조"></a>기본 프로젝트 구조</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">├─ .babelrc</span><br><span class="line">├─ gulpfile.js</span><br><span class="line">├─ package.json</span><br><span class="line">└─ src</span><br><span class="line">   └─ js</span><br><span class="line">      └─ lib.js</span><br></pre></td></tr></table></figure>
+
+<h2 id="설치목록"><a href="#설치목록" class="headerlink" title="설치목록"></a>설치목록</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install -g gulp</span><br><span class="line">npm install --save-dev gulp gulp-babel</span><br><span class="line">npm install --save-dev @babel/preset-env</span><br><span class="line">npm install --save-dev @babel/core</span><br><span class="line">npm install --save-dev gulp-sourcemaps</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="gulp"><a href="#gulp" class="headerlink" title="gulp"></a>gulp</h3><p>gulp 명령어로 gulpfile.js를 실행할 수 있다</p>
+<h3 id="gulp-babel"><a href="#gulp-babel" class="headerlink" title="gulp-babel"></a>gulp-babel</h3><p>gulp를 이용해 babel을 사용할 수 있게 해주는 패키지다</p>
+<h3 id="babel-preset-env"><a href="#babel-preset-env" class="headerlink" title="@babel/preset-env"></a>@babel/preset-env</h3><p>최신 javascript를 변환해 줄 수 있는 패키지다.</p>
+<h3 id="babel-core"><a href="#babel-core" class="headerlink" title="@babel/core"></a>@babel/core</h3><p>gulp-babel의 peer dependency라고 하는데 뭔 뜻인지 모르겠다. 일단 필요하니까 설치한다</p>
+<h3 id="gulp-sourcemaps"><a href="#gulp-sourcemaps" class="headerlink" title="gulp-sourcemaps"></a>gulp-sourcemaps</h3><p>변환된 코드와 변환되기 전 코드를 매핑해주는 패키지</p>
+<p>그리고 프로젝트 폴더에 .babelrc 파일을 생성하고 다음과 같이 작성한다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"presets"</span>: [<span class="string">"@babel/preset-env"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="es6코드-작성"><a href="#es6코드-작성" class="headerlink" title="es6코드 작성"></a>es6코드 작성</h2><p>이제 es6코드를 src/js/lib.js 에 작성한다</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sum = <span class="function">(<span class="params">a, b</span>) =&gt;</span> a + b;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(sum(<span class="number">3</span>, <span class="number">4</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> sentences = [</span><br><span class="line">  &#123; <span class="attr">subject</span>: <span class="string">"JavaScript"</span>, <span class="attr">verb</span>: <span class="string">"is"</span>, <span class="attr">object</span>: <span class="string">"great"</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">subject</span>: <span class="string">"papago"</span>, <span class="attr">verb</span>: <span class="string">"are"</span>, <span class="attr">object</span>: <span class="string">"large"</span> &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> say = <span class="function">(<span class="params">&#123; subject, verb, object &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;subject&#125;</span><span class="subst">$&#123;verb&#125;</span><span class="subst">$&#123;object&#125;</span>`</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// sentence 배열 내에 있는 각 객체별로 subject, verb, object를 연결해 출력</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> s <span class="keyword">of</span> sentences) &#123;</span><br><span class="line">  say(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>노드를 이용해 코드를 먼저 실행해본다</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node src/js/lib.js</span><br></pre></td></tr></table></figure>
+
+<p>출력내용</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">7</span><br><span class="line">JavaScriptisgreat</span><br><span class="line">papagoarelarge</span><br></pre></td></tr></table></figure>
+
+<h2 id="gulpfile-코드-작성"><a href="#gulpfile-코드-작성" class="headerlink" title="gulpfile 코드 작성"></a>gulpfile 코드 작성</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"><span class="keyword">var</span> babel = <span class="built_in">require</span>(<span class="string">'gulp-babel'</span>);</span><br><span class="line"><span class="keyword">var</span> sourcemaps = <span class="built_in">require</span>(<span class="string">'gulp-sourcemaps'</span>);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'babel'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'src/**/*.js'</span>)</span><br><span class="line">    .pipe(sourcemaps.init())</span><br><span class="line">    .pipe(babel())</span><br><span class="line">    .pipe(sourcemaps.write(<span class="string">'./'</span>, &#123;<span class="attr">sourceRoot</span>: <span class="string">'../src'</span>&#125;))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'dist'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'watch'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  gulp.watch(<span class="string">'src/**/*.js'</span>,gulp.series(<span class="string">'babel'</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>자세한 설명은 생략한다<br>이제 gulp 명령어로 babel을 실행해본다</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gulp babel</span><br></pre></td></tr></table></figure>
+
+<p>컴파일되어 생성된 dist 폴더</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">├─ .babelrc</span><br><span class="line">├─ gulpfile.js</span><br><span class="line">├─ package.json</span><br><span class="line">├─ dist</span><br><span class="line">   └─ js</span><br><span class="line">      ├─ lib.js</span><br><span class="line">      └─ lib.js.map</span><br><span class="line">└─ src</span><br><span class="line">   └─ js</span><br><span class="line">      └─ lib.js</span><br></pre></td></tr></table></figure>
+
+<h3 id="gulp-watch-관련-이슈"><a href="#gulp-watch-관련-이슈" class="headerlink" title="gulp watch 관련 이슈"></a>gulp watch 관련 이슈</h3><p>이전에 하던대로  watch 코드를 작성 후 돌려봤는데 오류가 떴다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Error: watching app/css/*.css: watch task has to be a <span class="keyword">function</span> ...</span><br><span class="line">어쩌구</span><br></pre></td></tr></table></figure>
+
+<p>구글링 해보니 gulp 버전이 업되면서 사용법이 달라졌던 것이다.</p>
+<h4 id="gulp-3-x-버전"><a href="#gulp-3-x-버전" class="headerlink" title="gulp 3.x 버전"></a>gulp 3.x 버전</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  gulp.watch(<span class="string">'app/css/*.css'</span>, [<span class="string">'styles'</span>]);</span><br><span class="line">  gulp.watch(<span class="string">'app/js/*.js'</span>, [<span class="string">'scripts'</span>]);</span><br><span class="line">  gulp.watch(<span class="string">'app/img/*'</span>, [<span class="string">'images'</span>]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="gulp-4-x-버전"><a href="#gulp-4-x-버전" class="headerlink" title="gulp 4.x 버전"></a>gulp 4.x 버전</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  gulp.watch(<span class="string">'app/css/*.css'</span>, gulp.series(<span class="string">'styles'</span>));</span><br><span class="line">  gulp.watch(<span class="string">'app/js/*.js'</span>, gulp.series(<span class="string">'scripts'</span>));</span><br><span class="line">  gulp.watch(<span class="string">'app/img/*'</span>, gulp.series(<span class="string">'images'</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+            
+
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">태그</span><br>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/babel/" rel="tag">babel</a> <a class="tag tag--primary tag--small t-link" href="/tags/es6/" rel="tag">es6</a> <a class="tag tag--primary tag--small t-link" href="/tags/javascript/" rel="tag">javascript</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/12/06/hexo-blog-SEO/" data-tooltip="hexo blog SEO" aria-label="이전: hexo blog SEO">
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">이전</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/11/15/hexo-blog-usage/" data-tooltip="hexo 블로그 기본 사용법" aria-label="다음: hexo 블로그 기본 사용법">
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">다음</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="이 포스트 공유하기">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youngjunsung.github.io/2019/12/06/babel-for-es6/" title="Facebook에 공유하기" aria-label="Facebook에 공유하기" rel="external nofollow noopener noreferrer">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://youngjunsung.github.io/2019/12/06/babel-for-es6/" title="Twitter에 공유하기" aria-label="Twitter에 공유하기" rel="external nofollow noopener noreferrer">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://youngjunsung.github.io/2019/12/06/babel-for-es6/" title="Google+에 공유하기" aria-label="Google+에 공유하기" rel="external nofollow noopener noreferrer">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+                <li class="post-action">
+                    <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="댓글을 남겨주세요">
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li>
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="맨 위로">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2019 young jun Sung. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/12/06/hexo-blog-SEO/" data-tooltip="hexo blog SEO" aria-label="이전: hexo blog SEO">
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">이전</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/11/15/hexo-blog-usage/" data-tooltip="hexo 블로그 기본 사용법" aria-label="다음: hexo 블로그 기본 사용법">
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">다음</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="이 포스트 공유하기">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youngjunsung.github.io/2019/12/06/babel-for-es6/" title="Facebook에 공유하기" aria-label="Facebook에 공유하기" rel="external nofollow noopener noreferrer">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://youngjunsung.github.io/2019/12/06/babel-for-es6/" title="Twitter에 공유하기" aria-label="Twitter에 공유하기" rel="external nofollow noopener noreferrer">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://youngjunsung.github.io/2019/12/06/babel-for-es6/" title="Google+에 공유하기" aria-label="Google+에 공유하기" rel="external nofollow noopener noreferrer">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+                <li class="post-action">
+                    <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="댓글을 남겨주세요">
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li>
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="맨 위로">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                
+    <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+        <i id="btn-close-shareoptions" class="fa fa-times"></i>
+        <ul class="share-options">
+            
+                
+                
+                <li class="share-option">
+                    <a class="share-option-btn" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youngjunsung.github.io/2019/12/06/babel-for-es6/" aria-label="Facebook에 공유하기" rel="external nofollow noopener noreferrer">
+                        <i class="fab fa-facebook" aria-hidden="true"></i><span>Facebook에 공유하기</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a class="share-option-btn" target="_blank" href="https://twitter.com/intent/tweet?text=https://youngjunsung.github.io/2019/12/06/babel-for-es6/" aria-label="Twitter에 공유하기" rel="external nofollow noopener noreferrer">
+                        <i class="fab fa-twitter" aria-hidden="true"></i><span>Twitter에 공유하기</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a class="share-option-btn" target="_blank" href="https://plus.google.com/share?url=https://youngjunsung.github.io/2019/12/06/babel-for-es6/" aria-label="Google+에 공유하기" rel="external nofollow noopener noreferrer">
+                        <i class="fab fa-google-plus" aria-hidden="true"></i><span>Google+에 공유하기</span>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+
+            
+        </div>
+        
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/cover.jpg" alt="저자 이미지">
+        
+            <h4 id="about-card-name">young jun Sung</h4>
+        
+            <div id="about-card-bio"><p>:)</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>Taxi Driver</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker-alt"></i>
+                <br>
+                zalem
+            </div>
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-lcgef6nixnlyvnnovb447skinpg8youtpobbci1rhiw3kc3jgc4ipnhd3zhl.min.js"></script>
+<!--SCRIPTS END-->
+
+
+    
+        <script>
+          var disqus_config = function() {
+            this.page.url = 'https://youngjunsung.github.io/2019/12/06/babel-for-es6/';
+              
+            this.page.identifier = '2019/12/06/babel-for-es6/';
+              
+          };
+          (function() {
+            var d = document, s = d.createElement('script');
+            var disqus_shortname = 'semantic-log';
+            s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+        </script>
+    
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://youngjunsung.github.io/sitemap.xml
