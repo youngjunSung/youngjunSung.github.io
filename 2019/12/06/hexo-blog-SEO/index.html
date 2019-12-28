@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="시멘틱로그">
-    <title>hexo blog SEO - 시멘틱로그</title>
+    <title>hexo 블로그 검색엔진최적화(SEO) 방법 - 시멘틱로그</title>
     <meta name="author" content="young jun Sung">
     <meta name="google-site-verification" content="7fFgnXi7Ib4qsKGlolEu3a5ODEwGBxi-UhDSBUNpqCY">
     <meta name="naver-site-verification" content="192bec4288d967f392e212883af44f5761376fe2">
@@ -16,16 +16,16 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/rss2.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"young jun Sung","sameAs":["https://github.com/youngjunSung","mailto:semantic@kakao.com","/#search","/#about"],"image":"cover.jpg"},"articleBody":"티스토리는 별도 설정 없이 검색엔진에 자동으로 노출이 되었던 걸로 기억하는데 (구글검색) 헥소 블로그는 플러그인을 통해서 SEO가 가능하다\n\n\n설치 플러그인 목록12345npm install --save hexo-auto-canonicalnpm install --save hexo-autonofollownpm install --save hexo-generator-feednpm install --save hexo-generator-seo-friendly-sitemapnpm install --save hexo-generator-robotstxt\n\n\n_config.yml 파일에 추가루트 폴더(테마폴더x)에 있는 _config.yml 파일에 다음과 같이 작성한다.\n123456789101112131415161718nofollow:    enable: true    exclude:    - exclude1.com    - exclude2.comfeed:  type: rss2  path: rss2.xml  limit: 20sitemap:  path: sitemap.xml  tag: false  category: falserobotstxt:  useragent: \"*\"  allow:    - /  sitemap: https://youngjunsung.github.io/sitemap.xml\n\nhtml head에 추가12345&lt;!-- ejs --&gt;&lt;%- autoCanonical(config, page) %&gt;&lt;!-- jade --&gt;| !&#123; autoCanonical(config, page) &#125;\n\n검색엔진에 등록하기구글색인 &gt; sitemaps 에서 rss2.xml과 sitemap.xml 파일을 제출한다.\n네이버사이트 인증 후 rss2.xml과 sitemap.xml 파일을 제출한다.\n다음사이트 정보만 입력해주면 된다.\n","dateCreated":"2019-12-06T17:59:20+09:00","dateModified":"2019-12-28T13:36:49+09:00","datePublished":"2019-12-06T17:59:20+09:00","description":"티스토리는 별도 설정 없이 검색엔진에 자동으로 노출이 되었던 걸로 기억하는데 (구글검색) 헥소 블로그는 플러그인을 통해서 SEO가 가능하다","headline":"hexo blog SEO","image":[null,"img_hexo.jpg"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/"},"publisher":{"@type":"Organization","name":"young jun Sung","sameAs":["https://github.com/youngjunSung","mailto:semantic@kakao.com","/#search","/#about"],"image":"cover.jpg","logo":{"@type":"ImageObject","url":"cover.jpg"}},"url":"https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/","keywords":"헥소, blog, 검색엔진최적화","thumbnailUrl":"img_hexo.jpg"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"young jun Sung","sameAs":["https://github.com/youngjunSung","mailto:semantic@kakao.com","/#search","/#about"],"image":"cover.jpg"},"articleBody":"티스토리는 별도 설정 없이 검색엔진에 자동으로 노출이 되었던 걸로 기억하는데 (구글검색) 헥소 블로그는 플러그인을 통해서 SEO가 가능하다\n\n\n설치 플러그인 목록12345npm install --save hexo-auto-canonicalnpm install --save hexo-autonofollownpm install --save hexo-generator-feednpm install --save hexo-generator-seo-friendly-sitemapnpm install --save hexo-generator-robotstxt\n\n\n_config.yml 파일에 추가루트 폴더(테마폴더x)에 있는 _config.yml 파일에 다음과 같이 작성한다.\n123456789101112131415161718nofollow:    enable: true    exclude:    - exclude1.com    - exclude2.comfeed:  type: rss2  path: rss2.xml  limit: 20sitemap:  path: sitemap.xml  tag: false  category: falserobotstxt:  useragent: \"*\"  allow:    - /  sitemap: https://youngjunsung.github.io/sitemap.xml\n\nhtml head에 추가12345&lt;!-- ejs --&gt;&lt;%- autoCanonical(config, page) %&gt;&lt;!-- jade --&gt;| !&#123; autoCanonical(config, page) &#125;\n\n검색엔진에 등록하기구글색인 &gt; sitemaps 에서 rss2.xml과 sitemap.xml 파일을 제출한다.\n네이버사이트 인증 후 rss2.xml과 sitemap.xml 파일을 제출한다.\n다음사이트 정보만 입력해주면 된다.\n","dateCreated":"2019-12-06T17:59:20+09:00","dateModified":"2019-12-28T15:43:15+09:00","datePublished":"2019-12-06T17:59:20+09:00","description":"티스토리는 별도 설정 없이 검색엔진에 자동으로 노출이 되었던 걸로 기억하는데 (구글검색) 헥소 블로그는 플러그인을 통해서 SEO가 가능하다","headline":"hexo 블로그 검색엔진최적화(SEO) 방법","image":["img_hexo.png"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/"},"publisher":{"@type":"Organization","name":"young jun Sung","sameAs":["https://github.com/youngjunSung","mailto:semantic@kakao.com","/#search","/#about"],"image":"cover.jpg","logo":{"@type":"ImageObject","url":"cover.jpg"}},"url":"https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/","keywords":"헥소, blog, 검색엔진최적화, SEO","thumbnailUrl":"img_hexo.png"}</script>
     <meta name="description" content="티스토리는 별도 설정 없이 검색엔진에 자동으로 노출이 되었던 걸로 기억하는데 (구글검색) 헥소 블로그는 플러그인을 통해서 SEO가 가능하다">
-<meta name="keywords" content="헥소,blog,검색엔진최적화">
+<meta name="keywords" content="헥소,blog,검색엔진최적화,SEO">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="hexo blog SEO">
+<meta property="og:title" content="hexo 블로그 검색엔진최적화(SEO) 방법">
 <meta property="og:url" content="https:&#x2F;&#x2F;youngjunsung.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;hexo-blog-SEO&#x2F;index.html">
 <meta property="og:site_name" content="시멘틱로그">
 <meta property="og:description" content="티스토리는 별도 설정 없이 검색엔진에 자동으로 노출이 되었던 걸로 기억하는데 (구글검색) 헥소 블로그는 플러그인을 통해서 SEO가 가능하다">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-12-28T04:36:49.176Z">
+<meta property="og:updated_time" content="2019-12-28T06:43:15.778Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -35,9 +35,9 @@
         <meta property="og:image" content="https://youngjunsung.github.io/assets/images/cover.jpg">
     
     
+        <meta property="og:image" content="https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/img_hexo.png">
+        <meta class="swiftype" name="image" data-type="enum" content="https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/img_hexo.png">
     
-        <meta property="og:image" content="https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/img_hexo.jpg">
-        <meta class="swiftype" name="image" data-type="enum" content="https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/img_hexo.jpg">
     
     
     <!--STYLES-->
@@ -201,14 +201,17 @@
 </nav>
 
             
-        <div class="post-header-cover
-                    text-left
-                    " style="background-image:url('/2019/12/06/hexo-blog-SEO/img_hexo.jpg');" data-behavior="4">
-            
-                <div class="post-header main-content-wrap text-left">
+            <div id="main" data-behavior="4" class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title">
-            hexo blog SEO
+            hexo 블로그 검색엔진최적화(SEO) 방법
         </h1>
     
     
@@ -224,15 +227,6 @@
     
 </div>
 
-            
-        </div>
-
-            <div id="main" data-behavior="4" class="hasCover
-                        hasCoverMetaIn
-                        ">
-                
-<article class="post">
-    
     
     <div class="post-content markdown">
         <div class="main-content-wrap">
@@ -261,7 +255,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">태그</span><br>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/blog/" rel="tag">blog</a> <a class="tag tag--primary tag--small t-link" href="/tags/%EA%B2%80%EC%83%89%EC%97%94%EC%A7%84%EC%B5%9C%EC%A0%81%ED%99%94/" rel="tag">검색엔진최적화</a> <a class="tag tag--primary tag--small t-link" href="/tags/%ED%97%A5%EC%86%8C/" rel="tag">헥소</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/SEO/" rel="tag">SEO</a> <a class="tag tag--primary tag--small t-link" href="/tags/blog/" rel="tag">blog</a> <a class="tag tag--primary tag--small t-link" href="/tags/%EA%B2%80%EC%83%89%EC%97%94%EC%A7%84%EC%B5%9C%EC%A0%81%ED%99%94/" rel="tag">검색엔진최적화</a> <a class="tag tag--primary tag--small t-link" href="/tags/%ED%97%A5%EC%86%8C/" rel="tag">헥소</a>
 
             </div>
         
@@ -280,7 +274,7 @@
             <li class="post-action">
                 
                     
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/12/06/babel-for-es6/" data-tooltip="babel for es6" aria-label="다음: babel for es6">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/12/06/babel-for-es6/" data-tooltip="babel를 사용해서 es6 컴파일하기" aria-label="다음: babel를 사용해서 es6 컴파일하기">
                     
                         <span class="hide-xs hide-sm text-small icon-mr">다음</span>
                         <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -375,7 +369,7 @@
             <li class="post-action">
                 
                     
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/12/06/babel-for-es6/" data-tooltip="babel for es6" aria-label="다음: babel for es6">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/12/06/babel-for-es6/" data-tooltip="babel를 사용해서 es6 컴파일하기" aria-label="다음: babel를 사용해서 es6 컴파일하기">
                     
                         <span class="hide-xs hide-sm text-small icon-mr">다음</span>
                         <i class="fa fa-angle-right" aria-hidden="true"></i>

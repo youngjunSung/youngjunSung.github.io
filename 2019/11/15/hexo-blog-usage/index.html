@@ -16,7 +16,7 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/rss2.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"young jun Sung","sameAs":["https://github.com/youngjunSung","mailto:semantic@kakao.com","/#search","/#about"],"image":"cover.jpg"},"articleBody":"포스팅 방법, 글 수정, hexo 이미지 삽입, 인덱스 페이지 썸네일 설정 방법, 그리고 백업(서브모듈관리) 대해 정리해본다.\n\n\n포스팅 hexo 블로그의 게시글들은 마크다운 파일을 생성하여 작성된다.\n1. draft 12$ hexo new draft 'title' // 초안 생성 후 작성$ hexo publish 'title' // post 폴더로 이동\n\n2. post 1$ hexo new post 'title' // 바로 post 폴더에 생성 후 작성\n\n post 폴더에 있는 md 파일들만 게시글로 올라간다.\n로컬 서버 실행1$ hexo s -o\n\n글 수정3가지만 진행하면 된다.\n123456789101112$ hexo clean // public 폴더 제거$ hexo generate // 정적 파일 생성 (public 폴더)$ hexo deploy // Github 페이지 배포$ hexo d -g // generate 와 deploy 한번에 진행``` ## 이미지 삽입보통은 source/images 폴더를 생성해서 이미지를 넣어도 되는데이미지를 포스트 별로 관리하려면 _config.yml 를 다음과 같이 수정한다```ymlpost_asset_folder: true\n이렇게 되면 포스트 타이틀과 동일한 이름의 폴더가 생성되는데이 폴더에 이미지를 넣으면 된다.그리고 마크다운 파일 본문에 아래 태그를 삽입하면 된다.\n12&#123;% asset_img img_name.jpg This is an example image %&#125;&#123;% asset_img &quot;spaced img_name.jpg&quot; &quot;spaced title&quot; %&#125;\n\n인덱스 페이지 썸네일 설정마크다운 Front-matter 에 coverImage 를 추가하면 된다\n123456789---title: hexo 블로그 기본 사용법tags:  - 헥소  - blog  - 사용법date: 2019-11-15 17:53:24coverImage: img_hexo.jpg---\n\nhexo 블로그 백업하기 - 서브모듈이용링크 참고\n\nhttps://mishka.kr/2019/06/13/backup/\nhttps://futurecreator.github.io/2018/07/18/hexo-blog-backup/\n\n","dateCreated":"2019-11-15T17:53:24+09:00","dateModified":"2019-12-28T13:47:58+09:00","datePublished":"2019-11-15T17:53:24+09:00","description":"포스팅 방법, 글 수정, hexo 이미지 삽입, 인덱스 페이지 썸네일 설정 방법, 그리고 백업(서브모듈관리) 대해 정리해본다.","headline":"hexo 블로그 기본 사용법","image":[null,"img_hexo.jpg"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://youngjunsung.github.io/2019/11/15/hexo-blog-usage/"},"publisher":{"@type":"Organization","name":"young jun Sung","sameAs":["https://github.com/youngjunSung","mailto:semantic@kakao.com","/#search","/#about"],"image":"cover.jpg","logo":{"@type":"ImageObject","url":"cover.jpg"}},"url":"https://youngjunsung.github.io/2019/11/15/hexo-blog-usage/","keywords":"헥소, blog, 사용법","thumbnailUrl":"img_hexo.jpg"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"young jun Sung","sameAs":["https://github.com/youngjunSung","mailto:semantic@kakao.com","/#search","/#about"],"image":"cover.jpg"},"articleBody":"포스팅 방법, 글 수정, hexo 이미지 삽입, 인덱스 페이지 썸네일 설정 방법, 그리고 백업(서브모듈관리) 대해 정리해본다.\n\n\n포스팅 hexo 블로그의 게시글들은 마크다운 파일을 생성하여 작성된다.\n1. draft 12$ hexo new draft 'title' // 초안 생성 후 작성$ hexo publish 'title' // post 폴더로 이동\n\n2. post 1$ hexo new post 'title' // 바로 post 폴더에 생성 후 작성\n\n post 폴더에 있는 md 파일들만 게시글로 올라간다.\n로컬 서버 실행1$ hexo s -o\n\n글 수정3가지만 진행하면 된다.\n123456789101112$ hexo clean // public 폴더 제거$ hexo generate // 정적 파일 생성 (public 폴더)$ hexo deploy // Github 페이지 배포$ hexo d -g // generate 와 deploy 한번에 진행``` ## 이미지 삽입보통은 source/images 폴더를 생성해서 이미지를 넣어도 되는데이미지를 포스트 별로 관리하려면 _config.yml 를 다음과 같이 수정한다```ymlpost_asset_folder: true\n이렇게 되면 포스트 타이틀과 동일한 이름의 폴더가 생성되는데이 폴더에 이미지를 넣으면 된다.그리고 마크다운 파일 본문에 아래 태그를 삽입하면 된다.\n12&#123;% asset_img img_name.jpg This is an example image %&#125;&#123;% asset_img &quot;spaced img_name.jpg&quot; &quot;spaced title&quot; %&#125;\n\n인덱스 페이지 썸네일 설정마크다운 Front-matter 에 coverImage 를 추가하면 된다\n123456789---title: hexo 블로그 기본 사용법tags:  - 헥소  - blog  - 사용법date: 2019-11-15 17:53:24coverImage: img_hexo.jpg---\n\nhexo 블로그 백업하기 - 서브모듈이용링크 참고\n\nhttps://mishka.kr/2019/06/13/backup/\nhttps://futurecreator.github.io/2018/07/18/hexo-blog-backup/\n\n","dateCreated":"2019-11-15T17:53:24+09:00","dateModified":"2019-12-28T15:37:45+09:00","datePublished":"2019-11-15T17:53:24+09:00","description":"포스팅 방법, 글 수정, hexo 이미지 삽입, 인덱스 페이지 썸네일 설정 방법, 그리고 백업(서브모듈관리) 대해 정리해본다.","headline":"hexo 블로그 기본 사용법","image":["img_hexo.png"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://youngjunsung.github.io/2019/11/15/hexo-blog-usage/"},"publisher":{"@type":"Organization","name":"young jun Sung","sameAs":["https://github.com/youngjunSung","mailto:semantic@kakao.com","/#search","/#about"],"image":"cover.jpg","logo":{"@type":"ImageObject","url":"cover.jpg"}},"url":"https://youngjunsung.github.io/2019/11/15/hexo-blog-usage/","keywords":"헥소, blog, 사용법","thumbnailUrl":"img_hexo.png"}</script>
     <meta name="description" content="포스팅 방법, 글 수정, hexo 이미지 삽입, 인덱스 페이지 썸네일 설정 방법, 그리고 백업(서브모듈관리) 대해 정리해본다.">
 <meta name="keywords" content="헥소,blog,사용법">
 <meta property="og:type" content="blog">
@@ -25,7 +25,7 @@
 <meta property="og:site_name" content="시멘틱로그">
 <meta property="og:description" content="포스팅 방법, 글 수정, hexo 이미지 삽입, 인덱스 페이지 썸네일 설정 방법, 그리고 백업(서브모듈관리) 대해 정리해본다.">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-12-28T04:47:58.275Z">
+<meta property="og:updated_time" content="2019-12-28T06:37:45.703Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -35,9 +35,9 @@
         <meta property="og:image" content="https://youngjunsung.github.io/assets/images/cover.jpg">
     
     
+        <meta property="og:image" content="https://youngjunsung.github.io/2019/11/15/hexo-blog-usage/img_hexo.png">
+        <meta class="swiftype" name="image" data-type="enum" content="https://youngjunsung.github.io/2019/11/15/hexo-blog-usage/img_hexo.png">
     
-        <meta property="og:image" content="https://youngjunsung.github.io/2019/11/15/hexo-blog-usage/img_hexo.jpg">
-        <meta class="swiftype" name="image" data-type="enum" content="https://youngjunsung.github.io/2019/11/15/hexo-blog-usage/img_hexo.jpg">
     
     
     <!--STYLES-->
@@ -201,11 +201,14 @@
 </nav>
 
             
-        <div class="post-header-cover
-                    text-left
-                    " style="background-image:url('/2019/11/15/hexo-blog-usage/img_hexo.jpg');" data-behavior="4">
-            
-                <div class="post-header main-content-wrap text-left">
+            <div id="main" data-behavior="4" class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title">
             hexo 블로그 기본 사용법
@@ -224,15 +227,6 @@
     
 </div>
 
-            
-        </div>
-
-            <div id="main" data-behavior="4" class="hasCover
-                        hasCoverMetaIn
-                        ">
-                
-<article class="post">
-    
     
     <div class="post-content markdown">
         <div class="main-content-wrap">
@@ -282,7 +276,7 @@
             <li class="post-action">
                 
                     
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/12/06/babel-for-es6/" data-tooltip="babel for es6" aria-label="이전: babel for es6">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/12/06/babel-for-es6/" data-tooltip="babel를 사용해서 es6 컴파일하기" aria-label="이전: babel를 사용해서 es6 컴파일하기">
                     
                         <i class="fa fa-angle-left" aria-hidden="true"></i>
                         <span class="hide-xs hide-sm text-small icon-ml">이전</span>
@@ -291,7 +285,7 @@
             <li class="post-action">
                 
                     
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/11/15/hexo-blog-initialize/" data-tooltip="hexo 블로그 만들기" aria-label="다음: hexo 블로그 만들기">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/11/15/hexo-blog-initialize/" data-tooltip="hexo 블로그 만들기 (tranquilpeak 테마 사용)" aria-label="다음: hexo 블로그 만들기 (tranquilpeak 테마 사용)">
                     
                         <span class="hide-xs hide-sm text-small icon-mr">다음</span>
                         <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -378,7 +372,7 @@
             <li class="post-action">
                 
                     
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/12/06/babel-for-es6/" data-tooltip="babel for es6" aria-label="이전: babel for es6">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/12/06/babel-for-es6/" data-tooltip="babel를 사용해서 es6 컴파일하기" aria-label="이전: babel를 사용해서 es6 컴파일하기">
                     
                         <i class="fa fa-angle-left" aria-hidden="true"></i>
                         <span class="hide-xs hide-sm text-small icon-ml">이전</span>
@@ -387,7 +381,7 @@
             <li class="post-action">
                 
                     
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/11/15/hexo-blog-initialize/" data-tooltip="hexo 블로그 만들기" aria-label="다음: hexo 블로그 만들기">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/11/15/hexo-blog-initialize/" data-tooltip="hexo 블로그 만들기 (tranquilpeak 테마 사용)" aria-label="다음: hexo 블로그 만들기 (tranquilpeak 테마 사용)">
                     
                         <span class="hide-xs hide-sm text-small icon-mr">다음</span>
                         <i class="fa fa-angle-right" aria-hidden="true"></i>
