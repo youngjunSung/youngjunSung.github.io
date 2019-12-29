@@ -8,8 +8,8 @@
     </url>
 
     <url>
-        <loc>https://youngjunsung.github.io/2019/12/29/css-select-remove-arrow/</loc>
-        <lastmod>2019-12-29T08:00:54.783Z</lastmod>
+        <loc>https://youngjunsung.github.io/2019/03/01/html-web-standard-accessibility/</loc>
+        <lastmod>2019-12-29T08:35:41.500Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,7 +17,7 @@
 
     <url>
         <loc>https://youngjunsung.github.io/2019/11/15/hexo-blog-usage/</loc>
-        <lastmod>2019-12-28T06:47:32.287Z</lastmod>
+        <lastmod>2019-12-29T08:06:27.321Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -25,7 +25,7 @@
 
     <url>
         <loc>https://youngjunsung.github.io/2019/12/06/hexo-blog-SEO/</loc>
-        <lastmod>2019-12-28T06:47:29.022Z</lastmod>
+        <lastmod>2019-12-29T08:06:23.699Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -33,7 +33,15 @@
 
     <url>
         <loc>https://youngjunsung.github.io/2019/11/15/hexo-blog-initialize/</loc>
-        <lastmod>2019-12-28T06:47:24.976Z</lastmod>
+        <lastmod>2019-12-29T08:06:17.303Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://youngjunsung.github.io/2019/11/21/css-select-remove-arrow/</loc>
+        <lastmod>2019-12-29T08:05:49.071Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

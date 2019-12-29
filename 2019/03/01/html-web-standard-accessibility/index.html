@@ -6,26 +6,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="시멘틱로그">
-    <title>CSS select 화살표 지우는 방법 - 시멘틱로그</title>
+    <title>HTML 웹 표준과 웹 접근성 - 시멘틱로그</title>
     <meta name="author" content="young jun Sung">
     <meta name="google-site-verification" content="7fFgnXi7Ib4qsKGlolEu3a5ODEwGBxi-UhDSBUNpqCY">
     <meta name="naver-site-verification" content="192bec4288d967f392e212883af44f5761376fe2">
-    <link rel="canonical" href="https://youngjunsung.github.io/2019/12/29/css-select-remove-arrow/">
+    <link rel="canonical" href="https://youngjunsung.github.io/2019/03/01/html-web-standard-accessibility/">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/rss2.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"young jun Sung","sameAs":["https://github.com/youngjunSung","mailto:semantic@kakao.com","/#search","/#about"],"image":"cover.jpg"},"articleBody":"셀렉트 박스 디자인에 따라 화살표를 수정해야하는 경우가 있는데, 아예 없앤 후 새로 요소를 추가해서 만들어야 한다. (border or 배경이미지로)\n\n1234567891011121314select &#123;  -webkit-appearance: none;  /* for chrome, safari */  -moz-appearance: none;  /*for firefox*/  appearance: none;  &amp;::-ms-expand &#123;    display: none;  &#125;  /* for ie */  &amp;:focus &#123;    outline: none;  &#125;&#125;\n\n\n","dateCreated":"2019-12-29T16:47:32+09:00","dateModified":"2019-12-29T17:00:54+09:00","datePublished":"2019-12-29T16:47:32+09:00","description":"셀렉트 박스 디자인에 따라 화살표를 수정해야하는 경우가 있는데, 아예 없앤 후 새로 요소를 추가해서 만들어야 한다. (border or 배경이미지로)","headline":"CSS select 화살표 지우는 방법","image":["img_css.jpg"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://youngjunsung.github.io/2019/12/29/css-select-remove-arrow/"},"publisher":{"@type":"Organization","name":"young jun Sung","sameAs":["https://github.com/youngjunSung","mailto:semantic@kakao.com","/#search","/#about"],"image":"cover.jpg","logo":{"@type":"ImageObject","url":"cover.jpg"}},"url":"https://youngjunsung.github.io/2019/12/29/css-select-remove-arrow/","keywords":"javascript, es6, babel","thumbnailUrl":"img_css.jpg"}</script>
-    <meta name="description" content="셀렉트 박스 디자인에 따라 화살표를 수정해야하는 경우가 있는데, 아예 없앤 후 새로 요소를 추가해서 만들어야 한다. (border or 배경이미지로)">
-<meta name="keywords" content="javascript,es6,babel">
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"young jun Sung","sameAs":["https://github.com/youngjunSung","mailto:semantic@kakao.com","/#search","/#about"],"image":"cover.jpg"},"articleBody":"마크업을 할 때 웹 표준과 웹 접근성을 준수하여 웹 서비스 UI 개발하는 능력이 중요하다. 사소하다고 생각되는 순간 놓치기 쉬운 부분이기 때문에 항상 염두에 두고 작업을 해야한다.\n\n\n웹 표준이란구글링으로 웹 표준을 검색해보면 대부분 이런게 설명하곤 한다.\n\n‘브라우저 종류 및 버전에 따른 기능 차이에 대하여 호환이 가능하도록 .. 웹페이지가 똑같이 보이고 .. 어쩌구’ \n\n도무지 한번에 와닿지 않아서 조금 더 쉽게 풀어서 정리해보았다.\n\n웹 표준이란, 웹 표준화 단체(W3C)가 권고한 표준안을 뜻하며 용도에 맞는 태그 사용과 CSS를 분리(구조와 표현의 분리)하여 작업하는 것을 말한다. \n\n아래 링크에서 자세한 내용을 확인할 수 있다.\n\nhttps://www.w3.org/TR/html5-author/\nhttps://www.koreahtml5.kr/front/reference/referenceList.do?bbsId=BBS_00000000002\n\n마크업 완료 후 웹 표준을 준수했는지 아래 링크에서 확인 가능하다.\n\nhttps://validator.w3.org/\nhttp://jigsaw.w3.org/css-validator/\nhttps://www.koreahtml5.kr/front/diagnosis/diagnosticUrl.do\n\n웹 접근성이란사람의 신체 조건과 상관 없이 모든 환경에서 웹 콘텐츠를 이용할 수 있어야 하는 것을 말한다.간략하게 설명하면 다음과 같다.\n\n스크린리더를 통해 음성으로 웹 페이지 내용을 들을 수 있어야한다.\n모든 기능은 키보드만으로 사용할 수 있어야 한다.\n명료성, 가독성, 콘텐츠의 논리성, 멀티미디어 대체 수단을 고려해야한다.\n\n진단 사이트\n\n한국웹접근성평가센터 - 체크리스트\nNHN Web Accessibility eXtension\n웹 접근성 연구소\n\n","dateCreated":"2019-03-01T17:35:08+09:00","dateModified":"2019-12-29T17:35:41+09:00","datePublished":"2019-03-01T17:35:08+09:00","description":"마크업을 할 때 웹 표준과 웹 접근성을 준수하여 웹 서비스 UI 개발하는 능력이 중요하다. 사소하다고 생각되는 순간 놓치기 쉬운 부분이기 때문에 항상 염두에 두고 작업을 해야한다.","headline":"HTML 웹 표준과 웹 접근성","image":["img_html.jpg"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://youngjunsung.github.io/2019/03/01/html-web-standard-accessibility/"},"publisher":{"@type":"Organization","name":"young jun Sung","sameAs":["https://github.com/youngjunSung","mailto:semantic@kakao.com","/#search","/#about"],"image":"cover.jpg","logo":{"@type":"ImageObject","url":"cover.jpg"}},"url":"https://youngjunsung.github.io/2019/03/01/html-web-standard-accessibility/","keywords":"HTML, 웹표준, 웹접근성","thumbnailUrl":"img_html.jpg"}</script>
+    <meta name="description" content="마크업을 할 때 웹 표준과 웹 접근성을 준수하여 웹 서비스 UI 개발하는 능력이 중요하다. 사소하다고 생각되는 순간 놓치기 쉬운 부분이기 때문에 항상 염두에 두고 작업을 해야한다.">
+<meta name="keywords" content="HTML,웹표준,웹접근성">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="CSS select 화살표 지우는 방법">
-<meta property="og:url" content="https:&#x2F;&#x2F;youngjunsung.github.io&#x2F;2019&#x2F;12&#x2F;29&#x2F;css-select-remove-arrow&#x2F;index.html">
+<meta property="og:title" content="HTML 웹 표준과 웹 접근성">
+<meta property="og:url" content="https:&#x2F;&#x2F;youngjunsung.github.io&#x2F;2019&#x2F;03&#x2F;01&#x2F;html-web-standard-accessibility&#x2F;index.html">
 <meta property="og:site_name" content="시멘틱로그">
-<meta property="og:description" content="셀렉트 박스 디자인에 따라 화살표를 수정해야하는 경우가 있는데, 아예 없앤 후 새로 요소를 추가해서 만들어야 한다. (border or 배경이미지로)">
+<meta property="og:description" content="마크업을 할 때 웹 표준과 웹 접근성을 준수하여 웹 서비스 UI 개발하는 능력이 중요하다. 사소하다고 생각되는 순간 놓치기 쉬운 부분이기 때문에 항상 염두에 두고 작업을 해야한다.">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-12-29T08:00:54.783Z">
+<meta property="og:updated_time" content="2019-12-29T08:35:41.500Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -35,8 +35,8 @@
         <meta property="og:image" content="https://youngjunsung.github.io/assets/images/cover.jpg">
     
     
-        <meta property="og:image" content="https://youngjunsung.github.io/2019/12/29/css-select-remove-arrow/img_css.jpg">
-        <meta class="swiftype" name="image" data-type="enum" content="https://youngjunsung.github.io/2019/12/29/css-select-remove-arrow/img_css.jpg">
+        <meta property="og:image" content="https://youngjunsung.github.io/2019/03/01/html-web-standard-accessibility/img_html.jpg">
+        <meta class="swiftype" name="image" data-type="enum" content="https://youngjunsung.github.io/2019/03/01/html-web-standard-accessibility/img_html.jpg">
     
     
     
@@ -211,20 +211,20 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title">
-            CSS select 화살표 지우는 방법
+            HTML 웹 표준과 웹 접근성
         </h1>
     
     
         <div class="post-meta">
-    <time datetime="2019-12-29T16:47:32+09:00">
+    <time datetime="2019-03-01T17:35:08+09:00">
 	
-		    2019/12/29
+		    2019/03/01
     	
     </time>
     
         <span>카테고리 </span>
         
-    <a class="category-link" href="/categories/css/">css</a>
+    <a class="category-link" href="/categories/HTML/">HTML</a>
 
 
     
@@ -236,11 +236,40 @@
     
     <div class="post-content markdown">
         <div class="main-content-wrap">
-            <p>셀렉트 박스 디자인에 따라 화살표를 수정해야하는 경우가 있는데, 아예 없앤 후 새로 요소를 추가해서 만들어야 한다. (border or 배경이미지로)</p>
+            <p>마크업을 할 때 웹 표준과 웹 접근성을 준수하여 웹 서비스 UI 개발하는 능력이 중요하다. 사소하다고 생각되는 순간 놓치기 쉬운 부분이기 때문에 항상 염두에 두고 작업을 해야한다.</p>
 <a id="more"></a>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">select</span> &#123;</span><br><span class="line">  <span class="attribute">-webkit-appearance</span>: none;</span><br><span class="line">  <span class="comment">/* for chrome, safari */</span></span><br><span class="line">  <span class="attribute">-moz-appearance</span>: none;</span><br><span class="line">  <span class="comment">/*for firefox*/</span></span><br><span class="line">  <span class="attribute">appearance</span>: none;</span><br><span class="line">  &amp;::-ms-expand &#123;</span><br><span class="line">    <span class="selector-tag">display</span>: <span class="selector-tag">none</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/* for ie */</span></span><br><span class="line">  &amp;<span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">outline</span>: none;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<iframe scrolling="no" width="100%" height="300" src="//jsfiddle.net/7qgvnwp0/13/embedded/html,css,result/light" frameborder="0" allowfullscreen></iframe>
+<h2 id="웹-표준이란"><a href="#웹-표준이란" class="headerlink" title="웹 표준이란"></a>웹 표준이란</h2><p>구글링으로 웹 표준을 검색해보면 대부분 이런게 설명하곤 한다.</p>
+<blockquote>
+<p>‘브라우저 종류 및 버전에 따른 기능 차이에 대하여 호환이 가능하도록 .. 웹페이지가 똑같이 보이고 .. 어쩌구’ </p>
+</blockquote>
+<p>도무지 한번에 와닿지 않아서 조금 더 쉽게 풀어서 정리해보았다.</p>
+<blockquote>
+<p>웹 표준이란, 웹 표준화 단체(W3C)가 권고한 표준안을 뜻하며 <b>용도에 맞는 태그 사용</b>과 <b>CSS를 분리(구조와 표현의 분리)</b>하여 작업하는 것을 말한다. </p>
+</blockquote>
+<p>아래 링크에서 자세한 내용을 확인할 수 있다.</p>
+<ul>
+<li><a href="https://www.w3.org/TR/html5-author/" target="_blank" rel="external nofollow noopener noreferrer">https://www.w3.org/TR/html5-author/</a></li>
+<li><a href="https://www.koreahtml5.kr/front/reference/referenceList.do?bbsId=BBS_00000000002" target="_blank" rel="external nofollow noopener noreferrer">https://www.koreahtml5.kr/front/reference/referenceList.do?bbsId=BBS_00000000002</a></li>
+</ul>
+<p>마크업 완료 후 웹 표준을 준수했는지 아래 링크에서 확인 가능하다.</p>
+<ul>
+<li><a href="https://validator.w3.org/" target="_blank" rel="external nofollow noopener noreferrer">https://validator.w3.org/</a></li>
+<li><a href="http://jigsaw.w3.org/css-validator/" target="_blank" rel="external nofollow noopener noreferrer">http://jigsaw.w3.org/css-validator/</a></li>
+<li><a href="https://www.koreahtml5.kr/front/diagnosis/diagnosticUrl.do" target="_blank" rel="external nofollow noopener noreferrer">https://www.koreahtml5.kr/front/diagnosis/diagnosticUrl.do</a></li>
+</ul>
+<h2 id="웹-접근성이란"><a href="#웹-접근성이란" class="headerlink" title="웹 접근성이란"></a>웹 접근성이란</h2><p>사람의 신체 조건과 상관 없이 모든 환경에서 웹 콘텐츠를 이용할 수 있어야 하는 것을 말한다.<br>간략하게 설명하면 다음과 같다.</p>
+<ul>
+<li>스크린리더를 통해 음성으로 웹 페이지 내용을 들을 수 있어야한다.</li>
+<li>모든 기능은 키보드만으로 사용할 수 있어야 한다.</li>
+<li>명료성, 가독성, 콘텐츠의 논리성, 멀티미디어 대체 수단을 고려해야한다.</li>
+</ul>
+<p>진단 사이트</p>
+<ul>
+<li><a href="http://www.kwacc.or.kr/WACertificate/Standard" target="_blank" rel="external nofollow noopener noreferrer">한국웹접근성평가센터 - 체크리스트</a></li>
+<li><a href="https://nuli.navercorp.com/sharing/fe/nwax" target="_blank" rel="external nofollow noopener noreferrer">NHN Web Accessibility eXtension</a></li>
+<li><a href="https://www.wah.or.kr:444/Participation/online-wah.asp" target="_blank" rel="external nofollow noopener noreferrer">웹 접근성 연구소</a></li>
+</ul>
 
             
 
@@ -252,7 +281,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">태그</span><br>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/babel/" rel="tag">babel</a> <a class="tag tag--primary tag--small t-link" href="/tags/es6/" rel="tag">es6</a> <a class="tag tag--primary tag--small t-link" href="/tags/javascript/" rel="tag">javascript</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/HTML/" rel="tag">HTML</a> <a class="tag tag--primary tag--small t-link" href="/tags/%EC%9B%B9%EC%A0%91%EA%B7%BC%EC%84%B1/" rel="tag">웹접근성</a> <a class="tag tag--primary tag--small t-link" href="/tags/%EC%9B%B9%ED%91%9C%EC%A4%80/" rel="tag">웹표준</a>
 
             </div>
         
@@ -262,17 +291,17 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled" aria-hidden="true">
-                        
+                    
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/11/15/hexo-blog-initialize/" data-tooltip="hexo 블로그 만들기 (tranquilpeak 테마 사용)" aria-label="이전: hexo 블로그 만들기 (tranquilpeak 테마 사용)">
+                    
                         <i class="fa fa-angle-left" aria-hidden="true"></i>
                         <span class="hide-xs hide-sm text-small icon-ml">이전</span>
                     </a>
             </li>
             <li class="post-action">
                 
-                    
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/12/06/hexo-blog-SEO/" data-tooltip="hexo 블로그 검색엔진최적화(SEO) 방법" aria-label="다음: hexo 블로그 검색엔진최적화(SEO) 방법">
-                    
+                    <a class="post-action-btn btn btn--disabled" aria-hidden="true">
+                        
                         <span class="hide-xs hide-sm text-small icon-mr">다음</span>
                         <i class="fa fa-angle-right" aria-hidden="true"></i>
                     </a>
@@ -289,7 +318,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youngjunsung.github.io/2019/12/29/css-select-remove-arrow/" title="Facebook에 공유하기" aria-label="Facebook에 공유하기" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youngjunsung.github.io/2019/03/01/html-web-standard-accessibility/" title="Facebook에 공유하기" aria-label="Facebook에 공유하기" rel="external nofollow noopener noreferrer">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -297,7 +326,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://youngjunsung.github.io/2019/12/29/css-select-remove-arrow/" title="Twitter에 공유하기" aria-label="Twitter에 공유하기" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://youngjunsung.github.io/2019/03/01/html-web-standard-accessibility/" title="Twitter에 공유하기" aria-label="Twitter에 공유하기" rel="external nofollow noopener noreferrer">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -305,7 +334,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://youngjunsung.github.io/2019/12/29/css-select-remove-arrow/" title="Google+에 공유하기" aria-label="Google+에 공유하기" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://youngjunsung.github.io/2019/03/01/html-web-standard-accessibility/" title="Google+에 공유하기" aria-label="Google+에 공유하기" rel="external nofollow noopener noreferrer">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -357,17 +386,17 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled" aria-hidden="true">
-                        
+                    
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/11/15/hexo-blog-initialize/" data-tooltip="hexo 블로그 만들기 (tranquilpeak 테마 사용)" aria-label="이전: hexo 블로그 만들기 (tranquilpeak 테마 사용)">
+                    
                         <i class="fa fa-angle-left" aria-hidden="true"></i>
                         <span class="hide-xs hide-sm text-small icon-ml">이전</span>
                     </a>
             </li>
             <li class="post-action">
                 
-                    
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/12/06/hexo-blog-SEO/" data-tooltip="hexo 블로그 검색엔진최적화(SEO) 방법" aria-label="다음: hexo 블로그 검색엔진최적화(SEO) 방법">
-                    
+                    <a class="post-action-btn btn btn--disabled" aria-hidden="true">
+                        
                         <span class="hide-xs hide-sm text-small icon-mr">다음</span>
                         <i class="fa fa-angle-right" aria-hidden="true"></i>
                     </a>
@@ -384,7 +413,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youngjunsung.github.io/2019/12/29/css-select-remove-arrow/" title="Facebook에 공유하기" aria-label="Facebook에 공유하기" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youngjunsung.github.io/2019/03/01/html-web-standard-accessibility/" title="Facebook에 공유하기" aria-label="Facebook에 공유하기" rel="external nofollow noopener noreferrer">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -392,7 +421,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://youngjunsung.github.io/2019/12/29/css-select-remove-arrow/" title="Twitter에 공유하기" aria-label="Twitter에 공유하기" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://youngjunsung.github.io/2019/03/01/html-web-standard-accessibility/" title="Twitter에 공유하기" aria-label="Twitter에 공유하기" rel="external nofollow noopener noreferrer">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -400,7 +429,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://youngjunsung.github.io/2019/12/29/css-select-remove-arrow/" title="Google+에 공유하기" aria-label="Google+에 공유하기" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://youngjunsung.github.io/2019/03/01/html-web-standard-accessibility/" title="Google+에 공유하기" aria-label="Google+에 공유하기" rel="external nofollow noopener noreferrer">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -434,7 +463,7 @@
                 
                 
                 <li class="share-option">
-                    <a class="share-option-btn" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youngjunsung.github.io/2019/12/29/css-select-remove-arrow/" aria-label="Facebook에 공유하기" rel="external nofollow noopener noreferrer">
+                    <a class="share-option-btn" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youngjunsung.github.io/2019/03/01/html-web-standard-accessibility/" aria-label="Facebook에 공유하기" rel="external nofollow noopener noreferrer">
                         <i class="fab fa-facebook" aria-hidden="true"></i><span>Facebook에 공유하기</span>
                     </a>
                 </li>
@@ -442,7 +471,7 @@
                 
                 
                 <li class="share-option">
-                    <a class="share-option-btn" target="_blank" href="https://twitter.com/intent/tweet?text=https://youngjunsung.github.io/2019/12/29/css-select-remove-arrow/" aria-label="Twitter에 공유하기" rel="external nofollow noopener noreferrer">
+                    <a class="share-option-btn" target="_blank" href="https://twitter.com/intent/tweet?text=https://youngjunsung.github.io/2019/03/01/html-web-standard-accessibility/" aria-label="Twitter에 공유하기" rel="external nofollow noopener noreferrer">
                         <i class="fab fa-twitter" aria-hidden="true"></i><span>Twitter에 공유하기</span>
                     </a>
                 </li>
@@ -450,7 +479,7 @@
                 
                 
                 <li class="share-option">
-                    <a class="share-option-btn" target="_blank" href="https://plus.google.com/share?url=https://youngjunsung.github.io/2019/12/29/css-select-remove-arrow/" aria-label="Google+에 공유하기" rel="external nofollow noopener noreferrer">
+                    <a class="share-option-btn" target="_blank" href="https://plus.google.com/share?url=https://youngjunsung.github.io/2019/03/01/html-web-standard-accessibility/" aria-label="Google+에 공유하기" rel="external nofollow noopener noreferrer">
                         <i class="fab fa-google-plus" aria-hidden="true"></i><span>Google+에 공유하기</span>
                     </a>
                 </li>
@@ -510,9 +539,9 @@
     
         <script>
           var disqus_config = function() {
-            this.page.url = 'https://youngjunsung.github.io/2019/12/29/css-select-remove-arrow/';
+            this.page.url = 'https://youngjunsung.github.io/2019/03/01/html-web-standard-accessibility/';
               
-            this.page.identifier = '2019/12/29/css-select-remove-arrow/';
+            this.page.identifier = '2019/03/01/html-web-standard-accessibility/';
               
           };
           (function() {
