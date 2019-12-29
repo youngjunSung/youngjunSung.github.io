@@ -9,8 +9,25 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>HTML 기초부터 node.js 까지 자바스크립트 풀스택 웹 개발</description>
-    <pubDate>Sat, 28 Dec 2019 06:47:29 GMT</pubDate>
+    <pubDate>Sun, 29 Dec 2019 07:47:32 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>CSS select 화살표 지우는 방법</title>
+      <link>https://youngjunsung.github.io/2019/12/29/css-select-remove-arrow/</link>
+      <guid>https://youngjunsung.github.io/2019/12/29/css-select-remove-arrow/</guid>
+      <pubDate>Sun, 29 Dec 2019 07:47:32 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;셀렉트 박스 디자인에 따라 화살표를 수정해야하는 경우가 있는데, 아예 없앤 후 새로 요소를 추가해서 만들어야 한다. (border or 배경이미지로)&lt;/p&gt;
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<p>셀렉트 박스 디자인에 따라 화살표를 수정해야하는 경우가 있는데, 아예 없앤 후 새로 요소를 추가해서 만들어야 한다. (border or 배경이미지로)</p><a id="more"></a><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.remove_select_arr</span> &#123;</span><br><span class="line">  <span class="attribute">-webkit-appearance</span>: none;</span><br><span class="line">  <span class="comment">/* for chrome, safari */</span></span><br><span class="line">  <span class="attribute">-moz-appearance</span>: none;</span><br><span class="line">  <span class="comment">/*for firefox*/</span></span><br><span class="line">  <span class="attribute">appearance</span>: none;</span><br><span class="line">  &amp;::-ms-expand &#123;</span><br><span class="line">    <span class="selector-tag">display</span>: <span class="selector-tag">none</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/* for ie */</span></span><br><span class="line">  &amp;<span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">outline</span>: none;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><iframe scrolling="no" width="100%" height="300" src="//jsfiddle.net/7qgvnwp0/embedded/html,scss,result/light" frameborder="0" allowfullscreen></iframe>]]></content:encoded>
+      
+      <comments>https://youngjunsung.github.io/2019/12/29/css-select-remove-arrow/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>hexo 블로그 검색엔진최적화(SEO) 방법</title>
