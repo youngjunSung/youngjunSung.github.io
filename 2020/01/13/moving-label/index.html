@@ -10,22 +10,22 @@
     <meta name="author" content="young jun Sung">
     <meta name="google-site-verification" content="7fFgnXi7Ib4qsKGlolEu3a5ODEwGBxi-UhDSBUNpqCY">
     <meta name="naver-site-verification" content="192bec4288d967f392e212883af44f5761376fe2">
-    <link rel="canonical" href="https://youngjunsung.github.io/2020/02/22/moving-label/">
+    <link rel="canonical" href="https://youngjunsung.github.io/2020/01/13/moving-label/">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/rss2.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"young jun Sung","sameAs":["https://github.com/youngjunSung","mailto:semantic@kakao.com","/#search","/#about"],"image":"profile.jpg"},"articleBody":"input의 placeholder 는 값이 입력되면 사라지는데 값이 입력 되더라도 폼 위젯의 내용을 표시되어야 할 경우가 있다. 이럴 때 placeholder를 대신해 label를 absolute로 띄워 스크립트로 입력값에 따라 조건부로 제어해주면 된다.\n\n1234567891011121314151617var $user_name = document.querySelectorAll('input')function onFocus(e) &#123;  e.target.parentElement.classList.add(\"on\");  console.log(e.target.value);&#125;function onBlur(e) &#123;  if (e.target.value == \"\") &#123;    e.target.parentElement.classList.remove(\"on\");  &#125;&#125;for (i = 0; i &lt; $user_name.length; i++) &#123;  $user_name[i].addEventListener('focus', onFocus);  $user_name[i].addEventListener('blur', onBlur);&#125;\n\n","dateCreated":"2020-02-22T21:00:52+09:00","dateModified":"2020-02-22T21:01:52+09:00","datePublished":"2020-02-22T21:00:52+09:00","description":"input의 placeholder 는 값이 입력되면 사라지는데 값이 입력 되더라도 폼 위젯의 내용을 표시되어야 할 경우가 있다. 이럴 때 placeholder를 대신해 label를 absolute로 띄워 스크립트로 입력값에 따라 조건부로 제어해주면 된다.","headline":"label 태그로 placeholder 대체하기","image":["img_js.jpg"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://youngjunsung.github.io/2020/02/22/moving-label/"},"publisher":{"@type":"Organization","name":"young jun Sung","sameAs":["https://github.com/youngjunSung","mailto:semantic@kakao.com","/#search","/#about"],"image":"profile.jpg","logo":{"@type":"ImageObject","url":"profile.jpg"}},"url":"https://youngjunsung.github.io/2020/02/22/moving-label/","keywords":"JavaScript, CSS, input, placeholder","thumbnailUrl":"img_js.jpg"}</script>
-    <meta name="description" content="input의 placeholder 는 값이 입력되면 사라지는데 값이 입력 되더라도 폼 위젯의 내용을 표시되어야 할 경우가 있다. 이럴 때 placeholder를 대신해 label를 absolute로 띄워 스크립트로 입력값에 따라 조건부로 제어해주면 된다.">
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"young jun Sung","sameAs":["https://github.com/youngjunSung","mailto:semantic@kakao.com","/#search","/#about"],"image":"profile.jpg"},"articleBody":"input의 placeholder 는 값이 입력되면 사라지는데 값이 입력 되더라도 폼 위젯의 내용이 표시되어야 할 경우가 있다. 이럴 때 placeholder를 대신해 label를 absolute로 띄워 스크립트로 입력값에 따라 조건부로 제어해주면 된다.\n\n1234567891011121314151617var $user_name = document.querySelectorAll('input')function onFocus(e) &#123;  e.target.parentElement.classList.add(\"on\");  console.log(e.target.value);&#125;function onBlur(e) &#123;  if (e.target.value == \"\") &#123;    e.target.parentElement.classList.remove(\"on\");  &#125;&#125;for (i = 0; i &lt; $user_name.length; i++) &#123;  $user_name[i].addEventListener('focus', onFocus);  $user_name[i].addEventListener('blur', onBlur);&#125;\n\n","dateCreated":"2020-01-13T21:00:52+09:00","dateModified":"2020-02-23T19:21:13+09:00","datePublished":"2020-01-13T21:00:52+09:00","description":"input의 placeholder 는 값이 입력되면 사라지는데 값이 입력 되더라도 폼 위젯의 내용이 표시되어야 할 경우가 있다. 이럴 때 placeholder를 대신해 label를 absolute로 띄워 스크립트로 입력값에 따라 조건부로 제어해주면 된다.","headline":"label 태그로 placeholder 대체하기","image":["img_js.jpg"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://youngjunsung.github.io/2020/01/13/moving-label/"},"publisher":{"@type":"Organization","name":"young jun Sung","sameAs":["https://github.com/youngjunSung","mailto:semantic@kakao.com","/#search","/#about"],"image":"profile.jpg","logo":{"@type":"ImageObject","url":"profile.jpg"}},"url":"https://youngjunsung.github.io/2020/01/13/moving-label/","keywords":"JavaScript, CSS, input, placeholder","thumbnailUrl":"img_js.jpg"}</script>
+    <meta name="description" content="input의 placeholder 는 값이 입력되면 사라지는데 값이 입력 되더라도 폼 위젯의 내용이 표시되어야 할 경우가 있다. 이럴 때 placeholder를 대신해 label를 absolute로 띄워 스크립트로 입력값에 따라 조건부로 제어해주면 된다.">
 <meta name="keywords" content="JavaScript,CSS,input,placeholder">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="label 태그로 placeholder 대체하기">
-<meta property="og:url" content="https:&#x2F;&#x2F;youngjunsung.github.io&#x2F;2020&#x2F;02&#x2F;22&#x2F;moving-label&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;youngjunsung.github.io&#x2F;2020&#x2F;01&#x2F;13&#x2F;moving-label&#x2F;index.html">
 <meta property="og:site_name" content="시멘틱로그">
-<meta property="og:description" content="input의 placeholder 는 값이 입력되면 사라지는데 값이 입력 되더라도 폼 위젯의 내용을 표시되어야 할 경우가 있다. 이럴 때 placeholder를 대신해 label를 absolute로 띄워 스크립트로 입력값에 따라 조건부로 제어해주면 된다.">
+<meta property="og:description" content="input의 placeholder 는 값이 입력되면 사라지는데 값이 입력 되더라도 폼 위젯의 내용이 표시되어야 할 경우가 있다. 이럴 때 placeholder를 대신해 label를 absolute로 띄워 스크립트로 입력값에 따라 조건부로 제어해주면 된다.">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2020-02-22T12:01:52.904Z">
+<meta property="og:updated_time" content="2020-02-23T10:21:13.148Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -35,8 +35,8 @@
         <meta property="og:image" content="https://youngjunsung.github.io/assets/images/profile.jpg">
     
     
-        <meta property="og:image" content="https://youngjunsung.github.io/2020/02/22/moving-label/img_js.jpg">
-        <meta class="swiftype" name="image" data-type="enum" content="https://youngjunsung.github.io/2020/02/22/moving-label/img_js.jpg">
+        <meta property="og:image" content="https://youngjunsung.github.io/2020/01/13/moving-label/img_js.jpg">
+        <meta class="swiftype" name="image" data-type="enum" content="https://youngjunsung.github.io/2020/01/13/moving-label/img_js.jpg">
     
     
     
@@ -216,9 +216,9 @@
     
     
         <div class="post-meta">
-    <time datetime="2020-02-22T21:00:52+09:00">
+    <time datetime="2020-01-13T21:00:52+09:00">
 	
-		    2020/02/22
+		    2020/01/13
     	
     </time>
     
@@ -236,7 +236,7 @@
     
     <div class="post-content markdown">
         <div class="main-content-wrap">
-            <p>input의 placeholder 는 값이 입력되면 사라지는데 값이 입력 되더라도 폼 위젯의 내용을 표시되어야 할 경우가 있다. 이럴 때 placeholder를 대신해 label를 absolute로 띄워 스크립트로 입력값에 따라 조건부로 제어해주면 된다.</p>
+            <p>input의 placeholder 는 값이 입력되면 사라지는데 값이 입력 되더라도 폼 위젯의 내용이 표시되어야 할 경우가 있다. 이럴 때 placeholder를 대신해 label를 absolute로 띄워 스크립트로 입력값에 따라 조건부로 제어해주면 된다.</p>
 <a id="more"></a>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> $user_name = <span class="built_in">document</span>.querySelectorAll(<span class="string">'input'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onFocus</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  e.target.parentElement.classList.add(<span class="string">"on"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(e.target.value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onBlur</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (e.target.value == <span class="string">""</span>) &#123;</span><br><span class="line">    e.target.parentElement.classList.remove(<span class="string">"on"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; $user_name.length; i++) &#123;</span><br><span class="line">  $user_name[i].addEventListener(<span class="string">'focus'</span>, onFocus);</span><br><span class="line">  $user_name[i].addEventListener(<span class="string">'blur'</span>, onBlur);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -288,7 +288,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youngjunsung.github.io/2020/02/22/moving-label/" title="Facebook에 공유하기" aria-label="Facebook에 공유하기" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youngjunsung.github.io/2020/01/13/moving-label/" title="Facebook에 공유하기" aria-label="Facebook에 공유하기" rel="external nofollow noopener noreferrer">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -296,7 +296,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://youngjunsung.github.io/2020/02/22/moving-label/" title="Twitter에 공유하기" aria-label="Twitter에 공유하기" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://youngjunsung.github.io/2020/01/13/moving-label/" title="Twitter에 공유하기" aria-label="Twitter에 공유하기" rel="external nofollow noopener noreferrer">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -304,7 +304,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://youngjunsung.github.io/2020/02/22/moving-label/" title="Google+에 공유하기" aria-label="Google+에 공유하기" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://youngjunsung.github.io/2020/01/13/moving-label/" title="Google+에 공유하기" aria-label="Google+에 공유하기" rel="external nofollow noopener noreferrer">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -383,7 +383,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youngjunsung.github.io/2020/02/22/moving-label/" title="Facebook에 공유하기" aria-label="Facebook에 공유하기" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youngjunsung.github.io/2020/01/13/moving-label/" title="Facebook에 공유하기" aria-label="Facebook에 공유하기" rel="external nofollow noopener noreferrer">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -391,7 +391,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://youngjunsung.github.io/2020/02/22/moving-label/" title="Twitter에 공유하기" aria-label="Twitter에 공유하기" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://youngjunsung.github.io/2020/01/13/moving-label/" title="Twitter에 공유하기" aria-label="Twitter에 공유하기" rel="external nofollow noopener noreferrer">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -399,7 +399,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://youngjunsung.github.io/2020/02/22/moving-label/" title="Google+에 공유하기" aria-label="Google+에 공유하기" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://youngjunsung.github.io/2020/01/13/moving-label/" title="Google+에 공유하기" aria-label="Google+에 공유하기" rel="external nofollow noopener noreferrer">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -433,7 +433,7 @@
                 
                 
                 <li class="share-option">
-                    <a class="share-option-btn" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youngjunsung.github.io/2020/02/22/moving-label/" aria-label="Facebook에 공유하기" rel="external nofollow noopener noreferrer">
+                    <a class="share-option-btn" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youngjunsung.github.io/2020/01/13/moving-label/" aria-label="Facebook에 공유하기" rel="external nofollow noopener noreferrer">
                         <i class="fab fa-facebook" aria-hidden="true"></i><span>Facebook에 공유하기</span>
                     </a>
                 </li>
@@ -441,7 +441,7 @@
                 
                 
                 <li class="share-option">
-                    <a class="share-option-btn" target="_blank" href="https://twitter.com/intent/tweet?text=https://youngjunsung.github.io/2020/02/22/moving-label/" aria-label="Twitter에 공유하기" rel="external nofollow noopener noreferrer">
+                    <a class="share-option-btn" target="_blank" href="https://twitter.com/intent/tweet?text=https://youngjunsung.github.io/2020/01/13/moving-label/" aria-label="Twitter에 공유하기" rel="external nofollow noopener noreferrer">
                         <i class="fab fa-twitter" aria-hidden="true"></i><span>Twitter에 공유하기</span>
                     </a>
                 </li>
@@ -449,7 +449,7 @@
                 
                 
                 <li class="share-option">
-                    <a class="share-option-btn" target="_blank" href="https://plus.google.com/share?url=https://youngjunsung.github.io/2020/02/22/moving-label/" aria-label="Google+에 공유하기" rel="external nofollow noopener noreferrer">
+                    <a class="share-option-btn" target="_blank" href="https://plus.google.com/share?url=https://youngjunsung.github.io/2020/01/13/moving-label/" aria-label="Google+에 공유하기" rel="external nofollow noopener noreferrer">
                         <i class="fab fa-google-plus" aria-hidden="true"></i><span>Google+에 공유하기</span>
                     </a>
                 </li>
@@ -509,9 +509,9 @@
     
         <script>
           var disqus_config = function() {
-            this.page.url = 'https://youngjunsung.github.io/2020/02/22/moving-label/';
+            this.page.url = 'https://youngjunsung.github.io/2020/01/13/moving-label/';
               
-            this.page.identifier = '2020/02/22/moving-label/';
+            this.page.identifier = '2020/01/13/moving-label/';
               
           };
           (function() {
